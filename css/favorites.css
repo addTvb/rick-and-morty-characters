@@ -1,0 +1,12 @@
+body {
+    gap: 40px;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 50px;
+}
