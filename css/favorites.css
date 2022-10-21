@@ -1,5 +1,5 @@
 body {
-    gap: 40px;
+    gap: 40px; /* отступ между header и .wrapper */
 }
 .wrapper {
     display: flex;

@@ -7,12 +7,7 @@ let favorites = localStorage.getItem('favoriteCharacters');
 let parsedFavorites = JSON.parse(favorites);
 let filteredArray = [...new Set(parsedFavorites)];
 
-// const getParsedData = (localStorageKey) => {
-//     let stringifyData = localStorage.getItem(localStorageKey)
-//     return JSON.parse(stringifyData)
-//  }
-//  let parsed = getParsedData('favoriteCharacters')
-
+// Функция принимает данные и рендерит их в html
 const createCard = (character) => {
 	let characterWrapper = document.createElement('div');
 
@@ -29,16 +24,21 @@ const createCard = (character) => {
 	wrapper.appendChild(characterWrapper);
 };
 
+// через .join(",") превращем массив в строку разделяя элементы запятыми
 fetch(`${BASE_URL}${filteredArray.join(',')}`, {
 	method: 'GET',
 })
 	.then((res) => res.json())
 	.then((parsedData) => {
 		if (filteredArray.length === 1) {
+			// если нам прилетаем объект то не итерируем его а просто передаем данные в функцию для рендеринга
 			createCard(parsedData);
+			// Здесь будет отрендерен только один персонаж, так как мы получили только один объект
 		} else {
+			// а если нам прилетает массив то проходим по нему и также передаем данные в функцию для рендеринга
 			parsedData.forEach((character, index) => {
 				createCard(character);
 			});
+			// Здесь будет отрендерено несколько персонажей
 		}
 	});

@@ -3,7 +3,6 @@
     margin: 0;
     font-family: sans-serif;
 }
-
 body {
     display: flex;
     justify-content: space-between;
@@ -11,6 +10,7 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+/* Header */
 .header {
     display: flex;
     align-items: center;
@@ -41,6 +41,7 @@ body {
     text-decoration-style: dotted;
     text-decoration-thickness: 4px;
 }
+/* Character card */
 .character-wrapper {
     display: flex;
     flex-direction: column;
@@ -56,19 +57,22 @@ body {
 .character-wrapper > img {
     border-radius: 10px;
 }
-.get-random-button {
-    background-color: #282828;
-    color: #fafafa;
+/* Buttons styles */
+.button {
     padding: 7px 15px;
     border-radius: 10px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s;
 }
-.get-random-button:active {
+.button:active {
     transform: scale(0.95);
 }
-/* FAVORITE BTN */
+.get-random-button {
+    background-color: #282828;
+    color: #fafafa;
+  
+}
 .favorite-button {
     margin-top: 10px;
     background-color: #ff6347;
